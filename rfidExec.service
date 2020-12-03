@@ -1,0 +1,13 @@
+[Unit]
+Description=Execute arbitrary tasks triggered by RFID.
+After=network.target
+
+[Service]
+User=pi
+Type=simple
+WorkingDirectory=/home/pi/rfidExec
+ExecStart=/home/pi/rfidExec/rfid-player.sh
+PIDFile=/home/pi/rfidExec/rfid-player.pid
+
+[Install]
+WantedBy=multi-user.target
