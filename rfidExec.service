@@ -6,8 +6,7 @@ After=network.target
 User=pi
 Type=simple
 WorkingDirectory=/home/pi/rfidExec
-ExecStart=/home/pi/rfidExec/rfid-player.sh
-PIDFile=/home/pi/rfidExec/rfid-player.pid
+ExecStart=/home/pi/rfidExec/rfid-daemon.sh
 
 [Install]
 WantedBy=multi-user.target

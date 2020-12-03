@@ -1,6 +1,10 @@
 #!/bin/sh
+deviceFile="rfid.device"
 
+[ -f $deviceFile ] || { echo "Use ./devic-ls.py first (rfid.device does not exist)."; exit 1; }
+
+deviceName=$(cat $deviceFile)
 while true; do
-	no=$(./rfid-read.py "HXGCoLtd Keyboard")
-	./play.sh "$no"
+	no=$(./rfid-read.py "$deviceName")
+	./action.sh "$no"
 done
